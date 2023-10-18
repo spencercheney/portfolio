@@ -5,7 +5,15 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet"/>
+      </head>
+      <body>
+        {children}
+        {/* <div className="rectangle"></div> */}
+      </body>
     </html>
   )
 }

@@ -1,7 +1,26 @@
 body {
-  background-color: black;
+  background-image: url("../public/background.png");
+  background-color: black; /* Used if the image is unavailable */
+  height: 98vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .header {
   color: #499135;
+  font-family: 'STIX Two Text', serif;
+  font-size: 95px;
+  margin-top: 90px;
+  margin-left: 50px;
+}
+
+.rectangle {
+  height: 50px;
+  width: 107vh;
+  background-color: #499135;
+  rotate: 106deg;
+  position: fixed;
+  left: 50vw;
+  top: 46vh;
 }
