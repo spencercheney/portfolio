@@ -12,7 +12,6 @@ export default function Layout({
       </head>
       <body>
         {children}
-        {/* <div className="rectangle"></div> */}
       </body>
     </html>
   )
