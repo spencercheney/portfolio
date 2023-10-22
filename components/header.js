@@ -6,22 +6,35 @@ export default function Header({location}) {
 
   const initialized = useRef({header: false, icon: false, name: false})
 
+  /**
+   * @returns true if all class functions have been ran at least once
+   */
   function isInitialized() {
     return initialized.current.header && initialized.current.icon && initialized.current.name
   }
 
+  /**
+   * gets the css module to use
+   * @returns animations | styles
+   */
+  function getModule() {
+    if(isInitialized()) {
+      return animations
+    } else {
+      return styles
+    }
+  }
+
+  /**
+   * @returns the css class list
+   */
   function getHeaderClass() {
     var classes = [styles.header] //the css class list
-    var module = null //the module to use
+    const module = getModule() //the module to use
 
-    //figure out which module to use
-    if(isInitialized()) {
-      module = animations
-    } else {
-      module = styles
-      initialized.current.header = true //name is being initialized
-    }
+    initialized.current.header = true //name is being initialized
 
+    //determine which class to use
     if(location == "top") {
       classes.push(module.headerTop)
     } else {
@@ -31,18 +44,16 @@ export default function Header({location}) {
     return classes.join(' ')
   }
 
+  /**
+   * @returns the css class list
+   */
   function getIconClass() {
     var classes = [styles.icon] //the css class list
-    var module = null //the module to use
+    var module = getModule() //the module to use
 
-    //figure out which module to use
-    if(isInitialized()) {
-      module = animations
-    } else {
-      module = styles
-      initialized.current.icon = true //name is being initialized
-    }
+    initialized.current.icon = true //name is being initialized
 
+    //determine which class to use
     if(location == "top") {
       classes.push(module.iconTop)
     } else {
@@ -52,18 +63,16 @@ export default function Header({location}) {
     return classes.join(' ')
   }
 
+  /**
+   * @returns the css class list
+   */
   function getNameClass() {
     var classes = [styles.name]
-    var module = null //the module to use
+    var module = getModule() //the module to use
 
-    //figure out which module to use
-    if(isInitialized()) {
-      module = animations
-    } else {
-      module = styles
-      initialized.current.name = true //name is being initialized
-    }
+    initialized.current.name = true //name is being initialized
 
+    //determine which class to use
     if(location == "top") {
       classes.push(module.nameTop)
     } else {
