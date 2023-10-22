@@ -17,7 +17,7 @@ export default function main() {
 
   return (
     <>
-      <Header headerLocation={headerLocation} />
+      <Header location={headerLocation} />
       <Sidebar moveHeader={moveHeader} />
     </>
   )

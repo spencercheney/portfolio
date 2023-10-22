@@ -1,0 +1,109 @@
+.headerCenter {
+  animation: linear forwards alternate;
+  animation-name: headerCenter;
+  animation-duration: 0.7s;
+}
+
+@keyframes headerCenter {
+  0% {
+    left: 20px;
+    top: 20px;
+  }
+  100% {
+    left: 200px;
+    top: 57%;
+  }
+}
+
+.headerTop {
+  animation: linear forwards alternate;
+  animation-name: headerTop;
+  animation-duration: 0.7s;
+}
+
+@keyframes headerTop {
+  0% {
+    left: 200px;
+    top: 57%;
+  }
+  100% {
+    left: 20px;
+    top: 20px;
+  }
+}
+
+.iconCenter {
+  animation: linear forwards alternate;
+  animation-name: iconCenter;
+  animation-duration: 0.7s;
+}
+
+@keyframes iconCenter {
+  0% {
+    left: 0px;
+    top: 0px;
+    transform: translateX(0%);
+  }
+  100% {
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+  }
+}
+
+.iconTop {
+  animation: linear forwards alternate;
+  animation-name: iconTop;
+  animation-duration: 0.7s;
+}
+
+@keyframes iconTop {
+  0% {
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+    transform: translateX(0%);
+  }
+}
+
+.nameCenter {
+  animation: linear forwards alternate;
+  animation-name: nameCenter;
+  animation-duration: 0.7s;
+}
+
+@keyframes nameCenter {
+  0% {
+    left: 210px;
+    bottom: 100px;
+    transform: translateY(-50%);
+  }
+  100% {
+    left: 0;
+    bottom: 200px;
+    transform: translateY(0%);
+  }
+}
+
+.nameTop {
+  animation: linear forwards alternate;
+  animation-name: nameTop;
+  animation-duration: 0.7s;
+}
+
+@keyframes nameTop {
+  0% {
+    left: 0;
+    bottom: 200px;
+    transform: translateY(0%);
+  }
+  100% {
+    left: 210px;
+    bottom: 100px;
+    transform: translateY(-50%);
+  }
+}
