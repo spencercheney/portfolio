@@ -1,7 +1,9 @@
-export default function basic({style, children}) {
+import styles from "../styles/component.module.css"
+
+export default function BasicComponent({style, children}) {
   return (
-    <div className="component" style={style}>
-      <div className="header">Component</div>
+    <div className={styles.component} style={style}>
+      <div className={styles.header}>Component</div>
       {children}
     </div>
   )

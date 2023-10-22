@@ -1,0 +1,24 @@
+.header {
+  position: absolute;
+  left: 200px;
+  top: 57%;
+}
+
+.icon {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 100px;
+  display: inline-block;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.name {
+  color: #499135;
+  font-family: 'STIX Two Text', serif;
+  font-size: 95px;
+  display: inline-block;
+}
