@@ -2,6 +2,7 @@
 
 import Sidebar from "@/components/sidebar"
 import Header from "@/components/header"
+import Container from "@/components/container"
 import { useState } from "react"
 
 export default function main() {
@@ -19,6 +20,7 @@ export default function main() {
     <>
       <Header location={headerLocation} />
       <Sidebar moveHeader={moveHeader} />
+      <Container open={headerLocation == "top"} />
     </>
   )
 }

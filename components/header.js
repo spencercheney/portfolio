@@ -49,7 +49,7 @@ export default function Header({location}) {
    */
   function getIconClass() {
     var classes = [styles.icon] //the css class list
-    var module = getModule() //the module to use
+    const module = getModule() //the module to use
 
     initialized.current.icon = true //name is being initialized
 
@@ -68,7 +68,7 @@ export default function Header({location}) {
    */
   function getNameClass() {
     var classes = [styles.name]
-    var module = getModule() //the module to use
+    const module = getModule() //the module to use
 
     initialized.current.name = true //name is being initialized
 
@@ -84,7 +84,9 @@ export default function Header({location}) {
 
   return (
     <div className={getHeaderClass()}>
-      <div className={getIconClass()}></div>
+      <div className={getIconClass()}>
+        <div/>
+      </div>
       <div className={getNameClass()}>Spencer Cheney</div>
     </div>
   )
