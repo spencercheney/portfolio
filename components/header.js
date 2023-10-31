@@ -1,10 +1,20 @@
+import { useRef } from "react"
+
+import useToast from "./toast/useToast"
+import ToastProvider from "./toast/ToastProvider"
+
 import styles from "../styles/header.module.css"
 import animations from "../styles/header_animations.module.css"
-import { useRef } from "react"
 
 export default function Header({location}) {
 
   const initialized = useRef({header: false, icon: false, name: false})
+  const toast = useToast()
+
+  function showToast() {
+    console.log(toast)
+    toast.open("just a test")
+  }
 
   /**
    * @returns true if all class functions have been ran at least once
@@ -83,11 +93,11 @@ export default function Header({location}) {
   }
 
   return (
-    <div className={getHeaderClass()}>
-      <div className={getIconClass()}>
+    <div className={ getHeaderClass() }>
+      <div className={ getIconClass() } onClick={ showToast }>
         <div/>
       </div>
-      <div className={getNameClass()}>Spencer Cheney</div>
+      <div className={ getNameClass() }>Spencer Cheney</div>
     </div>
   )
 }

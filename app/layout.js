@@ -1,3 +1,6 @@
+'use client'
+
+import ToastProvider from '@/components/toast/ToastProvider'
 import '../styles/global.css'
 
 export default function Layout({
@@ -11,7 +14,9 @@ export default function Layout({
         <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&family=STIX+Two+Text&display=swap" rel="stylesheet"/>
       </head>
       <body>
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </body>
     </html>
   )
