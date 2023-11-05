@@ -1,7 +1,17 @@
 .wrapper {
   position: absolute;
+  z-index: 1000;
+  
+}
+
+.topLeft {
+  top: 20px;
+  /* left: 20px; */
+}
+
+.bottomLeft {
   bottom: 20px;
-  right: 20px;
+  /* left: 20px; */
 }
 
 .toast {
@@ -13,12 +23,16 @@
   margin-top: 16px;
   display: flex;
   position: relative;
-  cursor: pointer;
+  cursor: default;
+  animation: linear forwards alternate;
+  animation-name: open;
+  animation-duration: 0.3s;
 }
 
 .text {
   padding: 16px 24px;
   line-height: 1.4;
+  color: black;
 }
 
 .closeBtn {
@@ -28,4 +42,31 @@
   margin-top: 8px;
   margin-right: 8px;
   cursor: pointer;
+}
+
+@keyframes open {
+  0% {
+    left: 0px;
+    transform: translateX(-100%)
+  }
+  100% {
+    left: 20px;
+    transform: translateX(0%)
+  }
+}
+
+.close {
+  animation: linear forwards alternate;
+  animation-name: close;
+  animation-duration: 0.3s;
+  left: 20px;
+}
+
+@keyframes close {
+  0% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
 }
