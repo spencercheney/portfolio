@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Sidebar from "@/components/sidebar"
 import Header from "@/components/header"
@@ -7,7 +7,7 @@ import useToast from "@/components/toast/useToast"
 
 import { useState } from "react"
 
-export default function main() {
+export default function Layout({ children }) {
   const [contentIsOpen, setContentIsOpen] = useState(false)
   const toast = useToast()
 
@@ -18,8 +18,7 @@ export default function main() {
       return !prevState
     })
     toast.close()
-      .then(() => toast.updateLocation(location) )
-    
+      .then( () => toast.updateLocation(location) )
   }
 
   return (
@@ -27,6 +26,7 @@ export default function main() {
       <Header location={ contentIsOpen ? "top" : "center" } />
       <Sidebar moveHeader={ toggleContent } />
       <Container open={ contentIsOpen } />
+      {children}
     </>
   )
 }

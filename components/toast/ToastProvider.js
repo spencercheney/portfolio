@@ -13,6 +13,10 @@ export default function ToastProvider({ children }) {
   const isClosedRef = useRef(false)
   isClosedRef.current  = isClosed
 
+  /**
+   * updates the location of where the toast will appear
+   * @param {string} newLocation 
+   */
   function updateLocation(newLocation) {
     if(newLocation == "topLeft") {
       setLocation(styles.topLeft)
@@ -21,6 +25,10 @@ export default function ToastProvider({ children }) {
     }
   }
 
+  /**
+   * opens a toast
+   * @param {JSX | string} newContent 
+   */
   function open(newContent) {
     if(isClosedRef.current) {
       setContent(newContent)
@@ -35,6 +43,10 @@ export default function ToastProvider({ children }) {
     }
   }
 
+  /**
+   * closes th toast
+   * @returns a promise to now when closing animation has finished
+   */
   function close() {    
     setIsCloseAnimationOn(true)
     return new Promise(resolve => {

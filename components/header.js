@@ -9,26 +9,17 @@ export default function Header({location}) {
 
   const initialized = useRef({header: false, icon: false, name: false})
   const toast = useToast()
-
-  // if(location == "top") {
-  //   toast.updateLocation("bottomLeft")
-  // } else {
-  //   toast.updateLocation("topLeft")
-  // }
-
-  function showToast() {
-    toast.open(<span>
-      I've always been entertained by the idea of magic. Believing in powers that can't be explained. This includes
-      genies, especially blue ones voiced by Robin Williams.
-      <br /><br />
-      One of the struggles I often face is my last name getting mispronouced. It's been pronouced ChAYnAY, ChAYnEE, and even
-      ShanAYnAY which are all incorrect. The correct pronouciation is ChEEnEE. The easiest way to remember it is that it's
-      pronouced the same way as genie but with a ch instead of g, Ch-enie. 
-      <br /><br />
-      The fact that I enjoy magic and that genies help pronouce my last name is perfect. That's why I've add the lamp and 
-      gave this website the domain name.
-    </span>)
-  }
+  const toastContent = <span>
+    I've always been entertained by the idea of magic. Believing in powers that can't be explained. This includes
+    genies, especially blue ones voiced by Robin Williams.
+    <br /><br />
+    One of the struggles I often face is my last name getting mispronouced. It's been pronouced ChAYnAY, ChAYnEE, and even
+    ShanAYnAY which are all incorrect. The correct pronouciation is ChEEnEE. The easiest way to remember it is that it's
+    pronouced the same way as genie but with a ch instead of g, Ch-enie. 
+    <br /><br />
+    The fact that I enjoy magic and that genies help pronouce my last name is perfect. That's why I've add the lamp and 
+    gave this website the domain name.
+  </span>
 
   /**
    * @returns true if all class functions have been ran at least once
@@ -108,7 +99,7 @@ export default function Header({location}) {
 
   return (
     <div className={ getHeaderClass() }>
-      <div className={ getIconClass() } onClick={ showToast }>
+      <div className={ getIconClass() } onClick={ () => toast.open(toastContent) }>
         <div/>
       </div>
       <div className={ getNameClass() }>Spencer Cheney</div>
