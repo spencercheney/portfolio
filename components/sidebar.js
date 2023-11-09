@@ -6,14 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faCode, faMagnifyingGlassChart, faFileArrowDown, faGamepad } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
-export default function Sidebar({moveHeader}) {
+export default function Sidebar({ goToLink }) {
   return (
     <div className={styles.sidebar}>
       <BasicComponent>
-        <Link href="/aboutMe" className={styles.link}>
+        <button className={styles.link} onClick={ () => goToLink("/aboutMe", true) }>
           <FontAwesomeIcon icon={faUser} />
           <span>About Me</span>
-        </Link>
+        </button>
         <Link href="/aboutMe" className={styles.link}>
           <FontAwesomeIcon icon={faCode} />
           <span>Projects</span>
@@ -32,7 +32,7 @@ export default function Sidebar({moveHeader}) {
         </Link>
       </BasicComponent>
       <BasicComponent style={{marginTop: 40}}>
-        <button className={styles.link} style={{width: "100%", textAlign: "center"}} onClick={moveHeader}>
+        <button className={styles.link} style={{width: "100%", textAlign: "center"}} onClick={ () => goToLink("/game", true) }>
           <FontAwesomeIcon icon={faGamepad} />
           Play a Game
         </button>

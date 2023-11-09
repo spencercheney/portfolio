@@ -5,10 +5,10 @@ import useToast from "./toast/useToast"
 import styles from "../styles/header.module.css"
 import animations from "../styles/header_animations.module.css"
 
-export default function Header({location}) {
+export default function Header({ location, initialized }) {
 
-  const initialized = useRef({header: false, icon: false, name: false})
-  const toast = useToast()
+  // const initialized = useRef({header: false, icon: false, name: false})
+  const toastDispatch = useToast()
   const toastContent = <span>
     I've always been entertained by the idea of magic. Believing in powers that can't be explained. This includes
     genies, especially blue ones voiced by Robin Williams.
@@ -24,16 +24,16 @@ export default function Header({location}) {
   /**
    * @returns true if all class functions have been ran at least once
    */
-  function isInitialized() {
-    return initialized.current.header && initialized.current.icon && initialized.current.name
-  }
+  // function isInitialized() {
+  //   return initialized.current.header && initialized.current.icon && initialized.current.name
+  // }
 
   /**
    * gets the css module to use
    * @returns animations | styles
    */
   function getModule() {
-    if(isInitialized()) {
+    if(initialized) {
       return animations
     } else {
       return styles
@@ -47,7 +47,7 @@ export default function Header({location}) {
     var classes = [styles.header] //the css class list
     const module = getModule() //the module to use
 
-    initialized.current.header = true //name is being initialized
+    // initialized.current.header = true //name is being initialized
 
     //determine which class to use
     if(location == "top") {
@@ -66,7 +66,7 @@ export default function Header({location}) {
     var classes = [styles.icon] //the css class list
     const module = getModule() //the module to use
 
-    initialized.current.icon = true //name is being initialized
+    // initialized.current.icon = true //name is being initialized
 
     //determine which class to use
     if(location == "top") {
@@ -85,7 +85,7 @@ export default function Header({location}) {
     var classes = [styles.name]
     const module = getModule() //the module to use
 
-    initialized.current.name = true //name is being initialized
+    // initialized.current.name = true //name is being initialized
 
     //determine which class to use
     if(location == "top") {
@@ -99,7 +99,7 @@ export default function Header({location}) {
 
   return (
     <div className={ getHeaderClass() }>
-      <div className={ getIconClass() } onClick={ () => toast.open(toastContent) }>
+      <div className={ getIconClass() } onClick={ () => toastDispatch({ type: "open", content: toastContent }) }>
         <div/>
       </div>
       <div className={ getNameClass() }>Spencer Cheney</div>

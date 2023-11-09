@@ -21,6 +21,7 @@
   border: none;
   outline: none;
   cursor: pointer;
+  font-family: 'STIX Two Text', serif;
 }
 
 .link:hover {
