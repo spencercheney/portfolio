@@ -2,6 +2,7 @@ import styles from "./toast.module.css"
 
 export default function toastReducer(values, action) {
   switch (action.type) {
+    //updates the location, typical set to where the most whitespace is
     case "updateLocation": {
       if(action.location == "topLeft") {
         return {
@@ -15,6 +16,7 @@ export default function toastReducer(values, action) {
         }
       }
     }
+    //opens the toast
     case "open": {
       return {
         ...values,
@@ -22,24 +24,28 @@ export default function toastReducer(values, action) {
         initiateOpen: true
       }
     }
+    //used to time animation
     case "openComplete": {
       return {
         ...values,
         initiateOpen: false
       }
     }
+    //closes the toast
     case "close": {
       return {
         ...values,
         initiateClose: true
       }
     }
+    //used to time animation
     case "closeComplete": {
       return {
         ...values,
         initiateClose: false
       }
     }
+    //used when closing the toast to guarentee content matches what is expected
     case "resetContent": {
       return {
         ...values,

@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useReducer } from "react";
 import ToastContext from "./ToastContext";
 import Toast from "./Toast";
 import styles from "./toast.module.css"
