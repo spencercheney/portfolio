@@ -1,10 +1,14 @@
 'use client'
 
 import useContent from "@/components/UseContent"
+import { useEffect } from "react"
 
 export default function main() {
-  const content = useContent()
-  content.open()
+  const contentDispatch = useContent()
+  
+  useEffect(() => {
+    contentDispatch({type: "open"})
+  }, [])
 
   return (<>about me</>)
 }

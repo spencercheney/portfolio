@@ -1,54 +1,51 @@
 'use client'
 
+import Header from "@/components/header/header"
 import Sidebar from "@/components/sidebar"
-import Header from "@/components/header"
-import Container from "@/components/container"
+import Content from "@/components/content/content"
 import useToast from "@/components/toast/useToast"
 import ContentContext from "@/components/ContentContext"
 
-import { useState, useMemo, useRef, useEffect } from "react"
+import { useEffect, useReducer } from "react"
 import { useRouter } from 'next/navigation'
+import contentReducer from "@/components/contentReducer"
 
 export default function Layout({ children }) {
-  const [contentIsOpen, setContentIsOpen] = useState(false)
-  // const [contentIsInitialized, setContentIsInitialized] = useState(false)
-  const contentIsInitialized = useRef(false)
+  const initialValues = {
+    isClosed: true, //whether the content component is open or closed
+    isInitialized: false //whether isClosed is setup for the first time on each page render
+  }
 
+  const [contentValues, dispatch] = useReducer(contentReducer,  initialValues)
   const toastDispatch = useToast()
   const router = useRouter()
 
+  //update toast location based on whether the main content component is open or closed
   useEffect(() => {
-    toastDispatch({ type: "updateLocation", location: contentIsOpen ? "bottomLeft" : "topLeft" })
-  }, [contentIsOpen])
+    toastDispatch({ type: "updateLocation", location: contentValues.isClosed ? "topLeft" : "bottomLeft" })
+  }, [contentValues.isClosed])
 
-  function goToLink(link, open) {
-    if(open != contentIsOpen) {
-      setContentIsOpen(!contentIsOpen)
+  /**
+   * Send the user to the request page and coordinates the needed animations
+   * @param {string} link the page you want to go to
+   * @param {boolean} contentIsClosed whether the content component will be open on the requested page
+   */
+  function goToLink(link, contentIsClosed) {
+    if(contentIsClosed != contentValues.isClosed) {
+      dispatch({ type: "update", isClosed: contentIsClosed })
       setTimeout(() => router.push(link), 300)
     } else {
       router.push(link)
     }
   }
 
-  function openContent() {
-    setContentIsOpen(true)
-    contentIsInitialized.current = true
-  }
-
-  function closeContent() {
-    setContentIsOpen(false)
-    contentIsInitialized.current = true
-  }
-
-  const contextValue = useMemo(() => ({ open: openContent, close: closeContent }), [])
-
   return (
-    <ContentContext.Provider value={ contextValue }>
-      <Header location={ contentIsOpen ? "top" : "center" } initialized={ contentIsInitialized.current } />
+    <ContentContext.Provider value={ dispatch }>
+      <Header location={ contentValues.isClosed ? "center" : "top" } isInitialized={ contentValues.isInitialized } />
       <Sidebar goToLink={ goToLink } />
-      <Container open={ contentIsOpen } initialized={ contentIsInitialized.current } >
+      <Content isClosed={ contentValues.isClosed } isInitialized={ contentValues.isInitialized } >
         {children}
-      </Container>
+      </Content>
     </ContentContext.Provider>
   )
 }

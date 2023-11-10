@@ -10,7 +10,7 @@ export default function Sidebar({ goToLink }) {
   return (
     <div className={styles.sidebar}>
       <BasicComponent>
-        <button className={styles.link} onClick={ () => goToLink("/aboutMe", true) }>
+        <button className={styles.link} onClick={ () => goToLink("/aboutMe", false) }>
           <FontAwesomeIcon icon={faUser} />
           <span>About Me</span>
         </button>
@@ -32,7 +32,7 @@ export default function Sidebar({ goToLink }) {
         </Link>
       </BasicComponent>
       <BasicComponent style={{marginTop: 40}}>
-        <button className={styles.link} style={{width: "100%", textAlign: "center"}} onClick={ () => goToLink("/game", true) }>
+        <button className={styles.link} style={{width: "100%", textAlign: "center"}} onClick={ () => goToLink("/game", false) }>
           <FontAwesomeIcon icon={faGamepad} />
           Play a Game
         </button>
