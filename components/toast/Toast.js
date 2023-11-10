@@ -1,15 +1,27 @@
 import styles from "./toast.module.css"
 import useToast from "./useToast"
 import { useIsClosed, useLocation } from "./toastHooks"
+import { useEffect } from "react"
 
 export default function Toast({ values }) {
-  const closeAnimationDuration = 300
-  const openAnimationDuration = 100
+  //all in seconds
+  const timeToastIsOpenFor = 20
+  const closeAnimationDuration = 0.3
+  const openAnimationDuration = 0.1
 
   const isClosed = useIsClosed(values.initiateClose, values.initiateOpen, closeAnimationDuration, openAnimationDuration)
   const location = useLocation(values.location, isClosed)
 
   const dispatch = useToast()
+
+  //close the toast the specified amount of time after opening it
+  useEffect(() => {
+    if(values.initiateOpen)  {{
+      setTimeout(() => {
+        dispatch({ type: "close"  })
+      }, timeToastIsOpenFor * 1000)
+    }}
+  }, [values.initiateOpen])
 
   return (
     <div className={ [styles.wrapper, location].join(' ') }>

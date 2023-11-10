@@ -22,15 +22,17 @@ function useIsClosed(initiateClose,  initiateOpen, closeAnimationDuration, openA
         setTimeout(() => {
           setIsClosed(true)
           dispatch({ type: "resetContent" })
-        }, closeAnimationDuration)
+          dispatch({ type: "closeComplete" })
+        }, closeAnimationDuration * 1000)
       }
-      dispatch({ type: "closeComplete" })
+      
     }
 
     //opens the toast
     if(initiateOpen) {
       if(isClosed) {
         setIsClosed(false)
+        dispatch({ type: "openComplete" })
       } else {
         //if the toast is already open close/reset it so it better meets user's expecations
         setIsClosed(true)
@@ -38,9 +40,9 @@ function useIsClosed(initiateClose,  initiateOpen, closeAnimationDuration, openA
         //if we instantly close and open the toast it doesn't register in the DOM so we need a short delay
         setTimeout(() => {
           setIsClosed(false)
-        }, openAnimationDuration)
+          dispatch({ type: "openComplete" })
+        }, openAnimationDuration * 1000)
       }
-      dispatch({ type: "openComplete" })
     }
   }, [initiateClose, initiateOpen,  closeAnimationDuration, openAnimationDuration])
 
