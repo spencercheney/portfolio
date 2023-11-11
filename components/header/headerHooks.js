@@ -27,7 +27,13 @@ function useHeaderClass(location, module) {
   const [headerClass, setHeaderClass] = useState([styles.header, module.headerCenter])
 
   useEffect(() => {
-    setHeaderClass(location == "top" ? [styles.header, module.headerTop]  : [styles.header, module.headerCenter])
+    const classList = [styles.header]
+    if(location == "top") {
+      classList.push(module.headerTop)
+    } else if(location == "center") {
+      classList.push(module.headerCenter)
+    }
+    setHeaderClass(classList)
   }, [location,  module])
 
   return  headerClass
@@ -43,7 +49,13 @@ function useIconClass(location, module) {
   const [iconClass, setIconClass] = useState([styles.icon, module.iconCenter])
 
   useEffect(() => {
-    setIconClass(location == "top" ? [styles.icon, module.iconTop]  : [styles.icon, module.iconCenter])
+    const classList = [styles.icon]
+    if(location == "top") {
+      classList.push(module.iconTop)
+    } else if(location == "center") {
+      classList.push(module.iconCenter)
+    }
+    setIconClass(classList)
   }, [location,  module])
 
   return  iconClass
@@ -59,7 +71,13 @@ function useNameClass(location, module) {
   const [nameClass, setNameClass] = useState([styles.name, module.nameCenter])
 
   useEffect(() => {
-    setNameClass(location == "top" ? [styles.name, module.nameTop]  : [styles.name, module.nameCenter])
+    const classList = [styles.name]
+    if(location == "top") {
+      classList.push(module.nameTop)
+    } else if(location == "center") {
+      classList.push(module.nameCenter)
+    }
+    setNameClass(classList)
   }, [location,  module])
 
   return  nameClass

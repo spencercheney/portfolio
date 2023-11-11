@@ -23,6 +23,7 @@ export default function Header({ location, isInitialized }) {
   const nameClass = useNameClass(location,  module)
 
   return (
+    location == "none" ? <></> :
     <div className={ headerClass.join(' ') }>
       <div className={ iconClass.join(' ') } onClick={ () => toastDispatch({ type: "open", content: toastContent }) }>
         <div/>

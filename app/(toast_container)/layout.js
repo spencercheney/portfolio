@@ -13,7 +13,8 @@ import contentReducer from "@/components/contentReducer"
 export default function Layout({ children }) {
   const initialValues = {
     isClosed: true, //whether the content component is open or closed
-    isInitialized: false //whether isClosed is setup for the first time on each page render
+    isInitialized: false, //whether isClosed is setup for the first time on each page render
+    headerLocation: "none" //where the header (name and icon) will be displayed
   }
 
   const [contentValues, dispatch] = useReducer(contentReducer,  initialValues)
@@ -41,7 +42,7 @@ export default function Layout({ children }) {
 
   return (
     <ContentContext.Provider value={ dispatch }>
-      <Header location={ contentValues.isClosed ? "center" : "top" } isInitialized={ contentValues.isInitialized } />
+      <Header location={ contentValues.headerLocation } isInitialized={ contentValues.isInitialized } />
       <Sidebar goToLink={ goToLink } />
       <Content isClosed={ contentValues.isClosed } isInitialized={ contentValues.isInitialized } >
         {children}
