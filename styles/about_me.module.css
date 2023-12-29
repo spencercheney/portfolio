@@ -1,0 +1,45 @@
+.text {
+  font-size: 33px;
+  position: absolute;
+  width: 40%;
+  top: 50%;
+  /* left: 50%; */
+  transform:  translateY(-50%);
+}
+
+.additionalInfo {
+  position: absolute;
+  left: calc(40% + 60px);
+  margin-top: -10px;
+  height: calc(100% - 55px);
+  width: calc(60% - 60px);
+  border-left: 3px solid #464646;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 21px;
+}
+
+.additionalInfo > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #464646;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.bold {
+  font-weight: 900;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.bold:hover {
+  left: 3px;
+  position: relative;
+  text-decoration: underline;
+}
