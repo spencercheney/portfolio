@@ -1,0 +1,27 @@
+.table {
+  font-family: 'STIX Two Text', serif;
+  font-size: 33px;
+}
+
+.table > tbody > tr > td {
+  min-width: 200px;
+}
+
+.link {
+  color: #499135;
+}
+
+.link:hover {
+  color: #3b752b;
+}
+
+.email {
+  display: inline;
+  cursor: pointer;
+}
+
+.copy {
+  margin-left: 50px;
+  color: black;
+  display: inline;
+}

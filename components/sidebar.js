@@ -19,22 +19,12 @@ export default function Sidebar({ goToLink }) {
           <span>Projects</span>
         </Link>
         <Link href="/aboutMe" className={styles.link}>
-          <FontAwesomeIcon icon={faMagnifyingGlassChart} />
-          <span>Data</span>
-        </Link>
-        <Link href="/aboutMe" className={styles.link}>
           <FontAwesomeIcon icon={faFileArrowDown} />          
           <span>Resume</span>
         </Link>
-        <Link href="/aboutMe" className={styles.link}>
+        <button className={styles.link}  onClick={ () => goToLink("/contactMe", false) }>
           <FontAwesomeIcon icon={faEnvelope} />          
           <span>Contact Me</span>
-        </Link>
-      </BasicComponent>
-      <BasicComponent style={{marginTop: 40}}>
-        <button className={styles.link} style={{width: "100%", textAlign: "center"}} onClick={ () => goToLink("/game", false) }>
-          <FontAwesomeIcon icon={faGamepad} />
-          Play a Game
         </button>
       </BasicComponent>
     </div>
