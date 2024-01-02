@@ -18,10 +18,10 @@ export default function Sidebar({ goToLink }) {
           <FontAwesomeIcon icon={faCode} />
           <span>Projects</span>
         </Link>
-        <Link href="/aboutMe" className={styles.link}>
+        <a href="Resume 12_27_23.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
           <FontAwesomeIcon icon={faFileArrowDown} />          
           <span>Resume</span>
-        </Link>
+        </a>
         <button className={styles.link}  onClick={ () => goToLink("/contactMe", false) }>
           <FontAwesomeIcon icon={faEnvelope} />          
           <span>Contact Me</span>
