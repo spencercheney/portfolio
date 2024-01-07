@@ -6,7 +6,13 @@
 }
 
 .sidebar > div {
-  width: 400px;
+  width: 460px;
+}
+
+.list {
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .link {

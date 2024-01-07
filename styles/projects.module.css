@@ -1,0 +1,39 @@
+.data {
+  font-family: 'STIX Two Text', serif;
+  font-size: 18px;
+  width: fit-content;
+}
+
+.title {
+  font-family: 'STIX Two Text', serif;
+  font-size: 23px;
+}
+
+.column {
+  width: calc(50% - 10px);
+  vertical-align: top;
+  display: inline-block;
+}
+
+.dropdown {
+  font-family: 'STIX Two Text', serif;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown:hover {
+  font-style: italic;
+  animation: linear forwards alternate;
+  animation-name: run;
+  animation-duration: 0.1s;
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 3px;
+  }
+}
