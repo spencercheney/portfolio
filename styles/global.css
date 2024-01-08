@@ -17,7 +17,7 @@ html {
 
 @media (max-width:700px) {
   body {
-    background-image: none;
+    background-image: url("../public/cell_background.png");
     width: 100vw;
   }
 }
