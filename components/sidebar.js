@@ -44,7 +44,7 @@ export default function Sidebar({ goToLink }) {
             <FontAwesomeIcon icon={faCode} />
             <span>Projects</span>
           </button>
-          <a href="Resume 12_27_23.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
+          <a href="Resume 1_8_2024.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
             <FontAwesomeIcon icon={faFileArrowDown} />          
             <span>Resume</span>
           </a>
