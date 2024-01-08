@@ -41,10 +41,8 @@ export default function main() {
             <td>Bootstrap and Custom CSS</td>
           </tr>
           <tr>
-            <td colSpan={2}>Summary:</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
+            <td style={{ display: "block" }}>Summary:</td>
+            <td style={{ display: "block" }}>
               R-Matrix is a <a href="https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/doors/9.7.0?topic=overview-doors" target="new">IBM DOORS</a> replacement. It's a project management application used to track 
               requirements. It aids in turning them into tasks and tracks the development, testing, completion, and delivery of them. I aided in maintaining the legacy code and making improvements to the user expirence on the frontend
               and reduce loading times on the backend. Improvements to the user interface was done by interacting the latest version of Bootstrap and jQuery and adding custom CSS styling. I used the combination of the libary and added 
@@ -81,10 +79,8 @@ export default function main() {
             <td>Custom CSS</td>
           </tr>
           <tr>
-            <td colSpan={2}>Summary:</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
+            <td style={{ display: "block" }}>Summary:</td>
+            <td style={{ display: "block" }}>
               Transcom is used to monitor the transportation of various forms of nuclear material. Users are able to view shipment data such as the position and route. Admins are able to view and manage organization data and the 
               users within. My work on this project was split into two parts, network security and web development. I was tasked by the client to secure the servers in their network to meet the CIS Benchmark standards. Through 
               editing the Group Policy and the Firewall permissions I was able to reach a score of 98% on the CIS Benchmark on each of their servers. My web development work was focused on privilege and access permission. I used 
@@ -110,10 +106,8 @@ export default function main() {
             <td>R-Matrix</td>
           </tr>
           <tr>
-            <td colSpan={2}>Summary:</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
+            <td style={{ display: "block" }}>Summary:</td>
+            <td style={{ display: "block" }}>
               Serving as the build manager for the project I created builds for all of the client's applications and documented them as moved from a state of development, test, and then delivered. In addition to the builds, I
               managed the code repositories in Subversion version control, creating branches and tags to create and update the code versions.
             </td>
@@ -148,10 +142,8 @@ export default function main() {
             <td>Bootstrap and Custom CSS</td>
           </tr>
           <tr>
-            <td colSpan={2}>Summary:</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
+            <td style={{ display: "block" }}>Summary:</td>
+            <td style={{ display: "block" }}>
               The Licensing Dashboard is a project I oversaw from creation until it was live in production. It's an application for users to submit requests to get a license key for each of the NRC Codes. After the requests 
               are submitted the users can view the status of them as admins take the requests through the approval process. I used LDAP for authentication so that the users could use their existing Active Directory account. 
               I set up a Microsoft SQL Server to store the data and I continued to manage the database as it went into production. Under the direction of the client I create a user friendly interface using Vue.js and Bootstrap. 
@@ -180,10 +172,8 @@ export default function main() {
             <td>Custom CSS</td>
           </tr>
           <tr>
-            <td colSpan={2}>Summary:</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
+            <td style={{ display: "block" }}>Summary:</td>
+            <td style={{ display: "block" }}>
               This is a paid freelance project I did for a local boxing gym. I was given a color scheme and I took various existing logos they had and recreated them in Affinity Designer to increase the resolution and so they would 
               work with the website. Using the color scheme and the logos I put together a layout that displays their company information. This allowed information to be easily pased to members of the gym. Once the layout was finished, 
               I added a admin screen so that the owners and managers of the gym could upload sign up paperwork or pictures and posts about the current events of the gym. These posts and pictures were viewed from an added newsfeed 

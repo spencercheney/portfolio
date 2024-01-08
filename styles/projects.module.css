@@ -4,6 +4,10 @@
   width: fit-content;
 }
 
+.data > tbody {
+  vertical-align: top;
+}
+
 .title {
   font-family: 'STIX Two Text', serif;
   font-size: 23px;
@@ -35,5 +39,23 @@
   }
   100% {
     left: 3px;
+  }
+}
+
+@media (max-width:655px) {
+  .column {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width:480px) {
+  .data > tbody > tr > td {
+    display: block;
+  }
+
+  .data > tbody > tr {
+    display: block;
+    margin-bottom: 5px;
   }
 }
