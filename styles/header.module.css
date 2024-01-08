@@ -69,9 +69,16 @@
 }
 
 @media (max-width:1450px) {
- .headerTop {
-  display: none;
- }
+  .headerTop {
+    display: none;
+  }
+  .iconTop {
+    display: none;
+  }
+
+  .nameTop {
+    display: none;
+  }
 }
 
 @media (max-width:1390px) {
