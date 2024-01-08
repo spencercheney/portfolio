@@ -9,6 +9,7 @@
 .children {
   height: calc(100% - 75px);
   overflow-y: auto;
+  overflow-x: hidden;
   padding-top: 10px;
   padding-left: 30px;
   padding-right: 30px;

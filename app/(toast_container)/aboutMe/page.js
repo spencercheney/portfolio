@@ -1,18 +1,27 @@
 'use client'
 
 import useContent from "@/components/UseContent"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "@/styles/about_me.module.css"
 
 export default function main() {
   const contentDispatch = useContent()
+  const infoRef = useRef(null)
   const [info, setInfo] = useState(<></>)
   
   useEffect(() => {
     contentDispatch({type: "open"})
   }, [])
 
-  function updateInfo(title) {
+  useEffect(() => {
+    if(infoRef.current.children.length > 0) {
+      
+    }
+  }, [info])
+
+  function updateInfo(e) {
+    e.preventDefault()
+    const title = e.target.innerText
     switch(title) {
       case "my goal is to make a difference":
         setInfo(
@@ -60,18 +69,19 @@ export default function main() {
         )
         break
     }
+    setTimeout(() => infoRef.current.children[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }), 5)
   }
 
   return (<>
     <div className={styles.text}>
-      I'm a software engineering and <span className={styles.bold} onClick={e => updateInfo(e.target.innerText)}>my goal is to make a difference</span>. 
+      I'm a software engineering and <span className={styles.bold} onClick={updateInfo}>my goal is to make a difference</span>. 
       
       <br/><br/>
       I started with a broad education of computers/technology and that has continued through my career. I have worked through all stages of website development. Including the 
-      initial <span className={styles.bold} onClick={e => updateInfo(e.target.innerText)}>database design</span> and continual management. I established website security to meet given standards 
-      through <span className={styles.bold} onClick={e => updateInfo(e.target.innerText)}>password encryption</span> and <span className={styles.bold} onClick={e => updateInfo(e.target.innerText)}>server security</span>. 
-      All of my software engineering includes an enhanced user expirience through user-friendly <span className={styles.bold} onClick={e => updateInfo(e.target.innerText)}>frontend development</span> and UX design.
+      initial <span className={styles.bold} onClick={updateInfo}>database design</span> and continual management. I established website security to meet given standards 
+      through <span className={styles.bold} onClick={updateInfo}>password encryption</span> and <span className={styles.bold} onClick={updateInfo}>server security</span>. 
+      All of my software engineering includes an enhanced user expirience through user-friendly <span className={styles.bold} onClick={updateInfo}>frontend development</span> and UX design.
     </div>
-    <div className={styles.additionalInfo}>{info}</div>
+    <div className={styles.additionalInfo} ref={infoRef}>{info}</div>
   </>)
 }
