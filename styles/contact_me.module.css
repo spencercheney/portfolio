@@ -25,3 +25,70 @@
   color: black;
   display: inline;
 }
+
+.up {
+  display: none;
+  margin-left: 5px;
+}
+
+@media (max-width:954px) {
+  .table {
+    font-size: 23px;
+  }
+}
+
+@media (max-width:777px) {
+  .email {
+    display: block;
+  }
+  
+  .copy {
+    position: absolute;
+    left: 292px;
+    margin-left: 0;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .up {
+    display: initial;
+  }
+}
+
+@media (max-width:575px) {
+  .table > tbody > tr > td {
+    min-width: 150px;
+  }
+
+  .copy {
+    left: 242px;
+  }
+}
+
+@media (max-width:530px) {
+  .long {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .long > td {
+    display: block;
+    width: 100% !important;
+  }
+
+  .copy {
+    left: 85px;
+  }
+
+  .table > tbody > tr > td {
+    display: inline-block;
+    width: 140px;
+    min-width: 0;
+  }
+}

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import styles from  "@/styles/contact_me.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
 export default function main() {
   const [showCopy, setShowCopy] = useState(false)
@@ -39,18 +39,20 @@ export default function main() {
   return(<>
       <table className={styles.table}>
         <tbody>
-          <tr>
+          <tr className={styles.long}>
             <td>Located In:</td>
             <td>Idaho Falls, Idaho</td> 
           </tr>
-          <tr onMouseEnter={() => setShowCopy(true)} onMouseLeave={() => setShowCopy(false)}>
+          <tr className={styles.long} onMouseEnter={() => setShowCopy(true)} onMouseLeave={() => setShowCopy(false)}>
             <td>Email:</td>
             <td>
               <div className={styles.email} onClick={copy}>spencercheney@gmail.com</div>
               {showCopy &&
                 <div className={styles.copy}>
-                  <FontAwesomeIcon icon={faArrowLeft} />
+                  <FontAwesomeIcon icon={faArrowLeft} className={styles.left}/>
+
                   <CopyText isCopied={isCopied} />
+                  <FontAwesomeIcon icon={faArrowUp} className={styles.up}/>
                 </div>
               }
             </td>
