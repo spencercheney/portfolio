@@ -17,7 +17,7 @@ export default function Sidebar({ goToLink }) {
     const isControlOpen = getComputedStyle(displayControl.current).display != "none"
 
     if(!isControlOpen || show) {
-      list.current.style.display = "inline-block"
+      list.current.style.display = "block"
     } else {
       list.current.style.display = "none"
     }

@@ -68,7 +68,7 @@
     top: 5px;
     right: 50%;
     transform: translateX(50%);
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
     display: inline-block;
   }
 
@@ -85,7 +85,15 @@
   }
 }
 
-@media (max-width:475px) {
+@media (max-width:485px) {
+  .sidebar {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 4px solid black;
+    width: 100%;
+    top: 0px;
+    background-color: #464646;
+  }
+
   .list {
     text-align: left;
     display: none;

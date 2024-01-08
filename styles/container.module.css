@@ -56,3 +56,100 @@
     display: none;
   }
 }
+
+@media (max-width:1450px) {
+  .container {
+    width: calc(100% - 50px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .open {
+    height: calc(100vh - 170px);
+  }
+
+  @keyframes raise {
+    0% {
+      height: 0px;
+      display: none;
+    }
+    100% {
+      height: calc(100vh - 170px);
+      display: block;
+    }
+  }
+}
+
+@media (max-width:1069px) {
+  .open {
+    height: calc(100vh - 220px);
+  }
+
+  @keyframes raise {
+    0% {
+      height: 0px;
+      display: none;
+    }
+    100% {
+      height: calc(100vh - 220px);
+      display: block;
+    }
+  }
+}
+
+@media (max-width:685px) {
+  .open {
+    height: calc(100vh - 270px);
+  }
+
+  @keyframes raise {
+    0% {
+      height: 0px;
+      display: none;
+    }
+    100% {
+      height: calc(100vh - 270px);
+      display: block;
+    }
+  }
+}
+
+@media (max-width:499px) {
+  .open {
+    height: calc(100vh - 320px);
+  }
+
+  @keyframes raise {
+    0% {
+      height: 0px;
+      display: none;
+    }
+    100% {
+      height: calc(100vh - 320px);
+      display: block;
+    }
+  }
+}
+
+@media (max-width:485px) {
+  .open {
+    height: calc(100vh - 170px);
+  }
+
+  @keyframes raise {
+    0% {
+      height: 0px;
+      display: none;
+    }
+    100% {
+      height: calc(100vh - 170px);
+      display: block;
+    }
+  }
+}
+
+@media (max-width:435px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+}
