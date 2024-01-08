@@ -13,7 +13,7 @@ export default function Header({ location, isInitialized }) {
     ShanAYnAY which are all incorrect. The correct pronouciation is ChEEnEE. The easiest way to remember it is that it's
     pronouced the same way as genie but with a ch instead of g, Ch-enie. 
     <br /><br />
-    While genies may not actually exist, they are magically able to help people remember my name. 
+    While genies may not actually exist, they are able to magically help people remember my name. 
   </span>
 
   const module = useModule(isInitialized)
