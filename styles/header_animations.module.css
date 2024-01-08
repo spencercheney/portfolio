@@ -107,3 +107,174 @@
     transform: translateY(-50%);
   }
 }
+
+@media (max-width:1450px) {
+  @keyframes headerCenter {
+    0% {
+      opacity: 0;
+      left: 200px;
+      top: 57%;
+    }
+    100% {
+      opacity: 1;
+      left: 200px;
+      top: 57%;
+    }
+  }
+
+  @keyframes headerTop {
+    0% {
+      opacity: 1;
+      left: 200px;
+      top: 57%;
+    }
+    100% {
+      opacity: 0;
+      left: 200px;
+      top: 57%;
+    }
+  }
+
+  @keyframes iconCenter {
+    0% {
+      opacity: 0;
+      top: 120px;
+      left: 50%;
+    }
+    100% {
+      opacity: 1;
+      top: 120px;
+      left: 50%;
+    }
+  }
+
+  @keyframes iconTop {
+    0% {
+      opacity: 1;
+      top: 120px;
+      left: 50%;
+    }
+    100% {
+      opacity: 0;
+      top: 120px;
+      left: 50%;
+    }
+  }
+
+  @keyframes nameCenter {
+    0% {
+      opacity: 0;
+      left: auto;
+      bottom: 200px;
+    }
+    100% {
+      opacity: 1;
+      left: auto;
+      bottom: 200px;
+    }
+  }
+
+  @keyframes nameTop {
+    0% {
+      opacity: 1;
+      left: auto;
+      bottom: 200px;
+    }
+    100% {
+      opacity: 0;
+      left: auto;
+      bottom: 200px;
+    }
+  }
+}
+
+@media (max-width:1390px) {
+  @keyframes headerCenter {
+    0% {
+      opacity: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 57%;
+    }
+    100% {
+      opacity: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 57%;
+    }
+  }
+
+  @keyframes headerTop {
+    0% {
+      opacity: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 57%;
+    }
+    100% {
+      opacity: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 57%;
+    }
+  }
+
+  @keyframes iconCenter {
+    0% {
+      opacity: 0;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes iconTop {
+    0% {
+      opacity: 1;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 0;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+
+@media (max-width:444px) {
+  @keyframes nameCenter {
+    0% {
+      opacity: 0;
+      left: auto;
+      bottom: 145px;
+    }
+    100% {
+      opacity: 1;
+      left: auto;
+      bottom: 145px;
+    }
+  }
+
+  @keyframes nameTop {
+    0% {
+      opacity: 1;
+      left: auto;
+      bottom: 145px;
+    }
+    100% {
+      opacity: 0;
+      left: auto;
+      bottom: 145px;
+    }
+  }
+}

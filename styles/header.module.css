@@ -68,6 +68,12 @@
   transform: translateY(-50%);
 }
 
+@media (max-width:1450px) {
+ .headerTop {
+  display: none;
+ }
+}
+
 @media (max-width:1390px) {
   .header {
     background-color: black;
@@ -92,5 +98,38 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
+  }
+
+  .nameCenter {
+    bottom: 300px;
+  }
+}
+
+@media (max-width:444px) {
+  .name {
+    font-size: 65px;
+  }
+
+  .nameCenter {
+    bottom: 145px;
+  }
+
+  .icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+  
+  .icon > div {
+    height: 56px;
+    width: 78px;
+    background-image: url(../public/lamp.png);
+  }
+  
+  .icon > div:hover {
+    background-image: url(../public/lamp.png);
+    cursor: pointer;
+    height: 59px;
+    width: 81px;
   }
 }

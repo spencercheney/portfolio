@@ -9,42 +9,8 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { useEffect, useRef, useState } from "react"
 
 export default function Sidebar({ goToLink }) {
-  const list = useRef(null)
-
-  return (
-    <div className={styles.sidebar}>
-      <BasicComponent>
-        <div className={styles.list} ref={list}>
-          <button className={styles.link} onClick={ () => goToLink("/", true) }>
-            <FontAwesomeIcon icon={faHouse} />
-            <span>Home</span>
-          </button>
-          <button className={styles.link} onClick={ () => goToLink("/aboutMe", false) }>
-            <FontAwesomeIcon icon={faUser} />
-            <span>About Me</span>
-          </button>
-          <button className={styles.link} onClick={ () => goToLink("/projects", false) }>
-            <FontAwesomeIcon icon={faCode} />
-            <span>Projects</span>
-          </button>
-          <a href="Resume 12_27_23.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
-            <FontAwesomeIcon icon={faFileArrowDown} />          
-            <span>Resume</span>
-          </a>
-          <button className={styles.link}  onClick={ () => goToLink("/contactMe", false) }>
-            <FontAwesomeIcon icon={faEnvelope} />          
-            <span>Contact Me</span>
-          </button>
-        </div>
-
-        <DisplayControl list={list}/>
-      </BasicComponent>
-    </div>
-  )
-}
-
-function DisplayControl({list}) {
   const [show, setShow] = useState(false)
+  const list = useRef(null)
   const displayControl = useRef(null)
 
   useEffect(() => {
@@ -57,6 +23,44 @@ function DisplayControl({list}) {
     }
   }, [show])
 
+  function click(link) {
+    setShow(false)
+    goToLink(link, link == "/")
+  }
+
+  return (
+    <div className={styles.sidebar}>
+      <BasicComponent>
+        <div className={styles.list} ref={list}>
+          <button className={styles.link} onClick={ () => click("/") }>
+            <FontAwesomeIcon icon={faHouse} />
+            <span>Home</span>
+          </button>
+          <button className={styles.link} onClick={ () => click("/aboutMe")}>
+            <FontAwesomeIcon icon={faUser} />
+            <span>About Me</span>
+          </button>
+          <button className={styles.link} onClick={ () => click("/projects") }>
+            <FontAwesomeIcon icon={faCode} />
+            <span>Projects</span>
+          </button>
+          <a href="Resume 12_27_23.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
+            <FontAwesomeIcon icon={faFileArrowDown} />          
+            <span>Resume</span>
+          </a>
+          <button className={styles.link} onClick={ () => click("/contactMe") }>
+            <FontAwesomeIcon icon={faEnvelope} />          
+            <span>Contact Me</span>
+          </button>
+        </div>
+
+        <DisplayControl displayControl={displayControl} show={show} setShow={setShow}/>
+      </BasicComponent>
+    </div>
+  )
+}
+
+function DisplayControl({displayControl, show, setShow}) {
   return (
     <div className={styles.displayControl} ref={displayControl}>
       {!show && 
