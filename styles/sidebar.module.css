@@ -39,6 +39,11 @@
   animation-duration: 0.2s;
 }
 
+.displayControl {
+  display: none;
+  padding-left: 30px;
+}
+
 @keyframes run {
   0% {
     left: 0;
@@ -54,4 +59,38 @@
 
 .link > svg {
   width: 80px;
+}
+
+@media (max-width:1450px) { 
+  .sidebar {
+    position: absolute;    
+    top: 5px;
+    right: 50%;
+    transform: translateX(50%);
+    width: calc(100% - 40px);
+    display: inline-block;
+  }
+
+  .sidebar > div {
+    width: 100%;
+  }
+
+  .link {
+    font-size: 25px;
+  }
+
+  .list {
+    text-align: center;
+  }
+}
+
+@media (max-width:475px) {
+  .list {
+    text-align: left;
+    display: none;
+  }
+
+  .displayControl {
+    display: inline;
+  }
 }

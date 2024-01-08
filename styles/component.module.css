@@ -17,3 +17,11 @@
   font-weight: 700;
   padding-left: 13px;
 }
+
+@media (max-width:1450px) {
+  .header {
+    font-size: 23px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
