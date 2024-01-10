@@ -74,13 +74,13 @@ export default function main() {
 
   return (<>
     <div className={styles.text}>
-      I'm a software engineering and <span className={styles.bold} onClick={updateInfo}>my goal is to make a difference</span>. 
+      I'm a software engineer and <span className={styles.bold} onClick={updateInfo}>my goal is to make a difference</span>. 
       
       <br/><br/>
-      I started with a broad education of computers/technology and that has continued through my career. I have worked through all stages of website development. Including the 
-      initial <span className={styles.bold} onClick={updateInfo}>database design</span> and continual management. I established website security to meet given standards 
+      I have a broad education of computers and technology that began with a Bachelor of Science in Computer Engineering and that has continued throughout my career. I have worked through all stages of website 
+      development. Including the initial <span className={styles.bold} onClick={updateInfo}>database design</span> and continual management. I established website security to meet given standards 
       through <span className={styles.bold} onClick={updateInfo}>password encryption</span> and <span className={styles.bold} onClick={updateInfo}>server security</span>. 
-      All of my software engineering includes an enhanced user expirience through user-friendly <span className={styles.bold} onClick={updateInfo}>frontend development</span> and UX design.
+      All of my software engineering includes an enhanced user experience through user-friendly <span className={styles.bold} onClick={updateInfo}>frontend development</span> and UX design.
     </div>
     <div className={styles.additionalInfo} ref={infoRef}>{info}</div>
   </>)
