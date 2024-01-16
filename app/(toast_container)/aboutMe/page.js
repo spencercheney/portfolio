@@ -1,23 +1,18 @@
 'use client'
 
-import useContent from "@/components/UseContent"
+import useContent from "@/components/useContent"
 import { useEffect, useRef, useState } from "react"
 import styles from "@/styles/about_me.module.css"
 
 export default function main() {
   const contentDispatch = useContent()
   const infoRef = useRef(null)
-  const [info, setInfo] = useState(<></>)
+  const [info, setInfo] = useState(<div className={styles.imageOfMe}><div></div></div>)
   
   useEffect(() => {
     contentDispatch({type: "open"})
+    document.title = "Spencer Cheney - About Me"
   }, [])
-
-  useEffect(() => {
-    if(infoRef.current.children.length > 0) {
-      
-    }
-  }, [info])
 
   function updateInfo(e) {
     e.preventDefault()
@@ -63,10 +58,17 @@ export default function main() {
         setInfo(
           <div>
             With both new and legacy projects I've create highly interactive and responsive websites. This was done through the use of HTML to layout the page, Bootstrap and custom CSS to so the pages have 
-            a modern styling, and JavaScript to retrieve the data and update/control the pages. I've used JavaScript frameworks such as Vue.js, React.js, and Next.js as well as plain JavaScript and HTML depending on 
+            a modern styling, and JavaScript to retrieve the data and update/control the pages. I've used JavaScript frameworks such as Vue, React, and Next.js as well as plain JavaScript and HTML depending on 
             the needs of the application.
           </div>
         )
+        break
+      case "interests and hobbies":
+        setInfo(
+          <div>
+              
+          </div>
+        )  
         break
     }
     setTimeout(() => infoRef.current.children[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }), 5)
@@ -81,6 +83,9 @@ export default function main() {
       development. Including the initial <span className={styles.bold} onClick={updateInfo}>database design</span> and continual management. I established website security to meet given standards 
       through <span className={styles.bold} onClick={updateInfo}>password encryption</span> and <span className={styles.bold} onClick={updateInfo}>server security</span>. 
       All of my software engineering includes an enhanced user experience through user-friendly <span className={styles.bold} onClick={updateInfo}>frontend development</span> and UX design.
+
+      <br/><br/>
+      When I'm not creating websites I stay busy with my <span className={styles.bold} onClick={updateInfo}>interests and hobbies</span>.
     </div>
     <div className={styles.additionalInfo} ref={infoRef}>{info}</div>
   </>)

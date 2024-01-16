@@ -1,6 +1,6 @@
 'use client'
 
-import useContent from "@/components/UseContent"
+import useContent from "@/components/useContent"
 import { useEffect, useState } from "react"
 import styles from  "@/styles/contact_me.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,6 +14,7 @@ export default function main() {
   
   useEffect(() => {
     contentDispatch({type: "open"})
+    document.title = "Spencer Cheney - Contact Me"
   }, [])
 
   function copy() {

@@ -1,6 +1,6 @@
 'use client'
 
-import useContent from "@/components/UseContent"
+import useContent from "@/components/useContent"
 import { useEffect } from "react"
 
 export default function main() {
@@ -8,6 +8,7 @@ export default function main() {
 
   useEffect(() => {
     contentDispatch({type: "close"})
+    document.title = "Spencer Cheney"
   },  [])
   
   return (<></>)
