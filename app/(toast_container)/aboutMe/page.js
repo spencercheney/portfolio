@@ -66,7 +66,8 @@ export default function main() {
       case "interests and hobbies":
         setInfo(
           <div>
-              
+            I spend most mornings working out by going through boxing drills on a heavy bag. After work I enjoy playing guitar and learning new songs. My favorite music to play along to is chill pop music, 
+            similar to Jack Johnson. To unwind I'll often play video games. Some of my favorites are Madden, Fortnite, and the classic Mario Kart Double Dash. 
           </div>
         )  
         break
