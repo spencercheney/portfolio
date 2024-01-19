@@ -1,16 +1,13 @@
 'use client'
 
-import useContent from "@/components/useContent"
 import { useEffect, useRef, useState } from "react"
 import styles from "@/styles/about_me.module.css"
 
 export default function main() {
-  const contentDispatch = useContent()
   const infoRef = useRef(null)
   const [info, setInfo] = useState(<div className={styles.imageOfMe}><div></div></div>)
   
   useEffect(() => {
-    contentDispatch({type: "open"})
     document.title = "Spencer Cheney - About Me"
   }, [])
 

@@ -29,4 +29,21 @@ function useClassList(isClosed, isInitialized) {
   return classList
 }
 
-export { useClassList }
+function useChildrenClass(isClosed) {
+  const [childrenClass, setChildrenClass] = useState(styles.children)
+  const [lastClosedValue, setLastClosedValue] = useState(undefined)
+
+  useEffect(() => {
+    if(lastClosedValue == undefined) {
+      setLastClosedValue(isClosed)
+    } else if(lastClosedValue != isClosed) {
+      setLastClosedValue(isClosed)
+      setChildrenClass(styles.hide)
+      setTimeout(() => setChildrenClass(styles.children), 700)
+    }
+  }, [isClosed])
+
+  return childrenClass
+}
+
+export { useClassList, useChildrenClass }

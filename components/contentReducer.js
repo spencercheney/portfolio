@@ -3,22 +3,19 @@ export default function contentReducer(values, action) {
     case "open": {
       return {
         ...values,
-        isClosed: false,
-        headerLocation: "top"
+        isClosed: false
       }
     }
     case "close": {
       return {
         ...values,
-        isClosed: true,
-        headerLocation: "center"
+        isClosed: true
       }
     }
     case "update": {
       return {
         isInitialized: true,
-        isClosed: action.isClosed,
-        headerLocation: action.isClosed ? "center" : "top"
+        isClosed: action.isClosed
       }
     }
   }

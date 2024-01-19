@@ -16,9 +16,8 @@ import { usePathname } from "next/navigation"
 export default function Layout({ children }) {
   const pathname = usePathname()
   const initialValues = {
-    isClosed: true, //whether the content component is open or closed
+    isClosed: pathname == "/", //whether the content component is open or closed
     isInitialized: false, //whether isClosed is setup for the first time on each page render
-    headerLocation: pathname == "/" ? "center" : "top" //where the header (name and icon) will be displayed
   }
 
   const [contentValues, dispatch] = useReducer(contentReducer,  initialValues)
@@ -38,7 +37,7 @@ export default function Layout({ children }) {
   function goToLink(link, contentIsClosed) {
     if(contentIsClosed != contentValues.isClosed) {
       dispatch({ type: "update", isClosed: contentIsClosed })
-      setTimeout(() => router.push(link), 300)
+      setTimeout(() => router.push(link), 700)
     } else {
       router.push(link)
     }
@@ -46,7 +45,7 @@ export default function Layout({ children }) {
 
   return (
     <ContentContext.Provider value={ dispatch }>
-      <Header location={ contentValues.headerLocation } isInitialized={ contentValues.isInitialized } />
+      <Header location={ contentValues.isClosed ? "center" : "top" } isInitialized={ contentValues.isInitialized } />
       <Sidebar goToLink={ goToLink } />
       <Content isClosed={ contentValues.isClosed } isInitialized={ contentValues.isInitialized } >
         {children}

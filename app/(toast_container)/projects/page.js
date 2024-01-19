@@ -1,16 +1,12 @@
 'use client'
 
-import useContent from "@/components/useContent"
 import { useEffect, useState } from "react"
 import styles from  "@/styles/projects.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleArrowUp, faCircleArrowDown } from "@fortawesome/free-solid-svg-icons"
 
-export default function main() {
-  const contentDispatch = useContent()
-  
+export default function main() {  
   useEffect(() => {
-    contentDispatch({type: "open"})
     document.title = "Spencer Cheney - Projects"
   }, [])
 

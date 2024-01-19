@@ -1,6 +1,5 @@
 'use client'
 
-import useContent from "@/components/useContent"
 import { useEffect, useState } from "react"
 import styles from  "@/styles/contact_me.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -10,10 +9,8 @@ import { faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 export default function main() {
   const [showCopy, setShowCopy] = useState(false)
   const [isCopied,  setIsCopied] = useState(false)
-  const contentDispatch = useContent()
   
   useEffect(() => {
-    contentDispatch({type: "open"})
     document.title = "Spencer Cheney - Contact Me"
   }, [])
 
