@@ -3,7 +3,7 @@
 import useContent from "@/components/useContent"
 import { useEffect } from "react"
 
-export default function main() {
+function main() {
   const contentDispatch = useContent()
 
   useEffect(() => {
@@ -13,3 +13,6 @@ export default function main() {
   
   return (<></>)
 }
+
+main.displayName = "home"
+export default main

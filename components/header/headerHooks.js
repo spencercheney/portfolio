@@ -24,7 +24,7 @@ function useModule(isInitialized) {
  * @returns an array of classes from a CSS module
  */
 function useHeaderClass(location, module) {
-  const [headerClass, setHeaderClass] = useState([styles.header, module.headerCenter])
+  const [headerClass, setHeaderClass] = useState([styles.header, location == "center" ? module.headerCenter : module.headerTop])
 
   useEffect(() => {
     const classList = [styles.header]
@@ -46,7 +46,7 @@ function useHeaderClass(location, module) {
  * @returns an array of classes from a CSS module
  */
 function useIconClass(location, module) {
-  const [iconClass, setIconClass] = useState([styles.icon, module.iconCenter])
+  const [iconClass, setIconClass] = useState([styles.icon, location == "center" ? module.iconCenter : module.iconTop])
 
   useEffect(() => {
     const classList = [styles.icon]
@@ -68,7 +68,7 @@ function useIconClass(location, module) {
  * @returns an array of classes from a CSS module
  */
 function useNameClass(location, module) {
-  const [nameClass, setNameClass] = useState([styles.name, module.nameCenter])
+  const [nameClass, setNameClass] = useState([styles.name, location == "center" ? module.nameCenter : module.nameTop])
 
   useEffect(() => {
     const classList = [styles.name]

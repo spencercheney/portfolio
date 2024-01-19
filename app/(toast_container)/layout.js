@@ -10,11 +10,15 @@ import { useEffect, useReducer } from "react"
 import { useRouter } from 'next/navigation'
 import contentReducer from "@/components/contentReducer"
 
+
+import { usePathname } from "next/navigation"
+
 export default function Layout({ children }) {
+  const pathname = usePathname()
   const initialValues = {
     isClosed: true, //whether the content component is open or closed
     isInitialized: false, //whether isClosed is setup for the first time on each page render
-    headerLocation: "none" //where the header (name and icon) will be displayed
+    headerLocation: pathname == "/" ? "center" : "top" //where the header (name and icon) will be displayed
   }
 
   const [contentValues, dispatch] = useReducer(contentReducer,  initialValues)
