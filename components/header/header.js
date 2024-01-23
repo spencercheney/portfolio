@@ -6,7 +6,7 @@ export default function Header({ location, isInitialized }) {
   const toastDispatch = useToast()
   //what will be displayed in the toast
   const toastContent = <span>
-    I've always been entertained by the idea of magic; believing in powers that can't be explained. I've always thought 
+    I've always been entertained by the idea of magic: believing in powers that can't be explained. I've always thought 
     the most interesting magical being is the genie.
     <br /><br />
     One of the struggles I often face is my last name getting mispronouced. It's been pronouced ChAYnAY, ChAYnEE, and even
