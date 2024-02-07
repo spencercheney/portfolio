@@ -64,7 +64,7 @@ export default function main() {
           <tr>
             <td>Github:</td>
             <td>
-              <a className={styles.link} href="https://github.com/spCheney" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+              <a className={styles.link} href="https://github.com/spencercheney" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
             </td>
           </tr>
         </tbody>
