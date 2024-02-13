@@ -54,7 +54,7 @@ export default function main() {
           <tr>
             <td>LinkedIn:</td>
             <td>
-              <a className={styles.link} href="https://www.linkedin.com/in/spencer-cheney-b86381141/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+              <a className={styles.link} href="https://www.linkedin.com/in/spencer-cheney/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
             </td>
           </tr>
           <tr>
