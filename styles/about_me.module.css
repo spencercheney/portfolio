@@ -19,7 +19,7 @@
   font-size: 21px;
 }
 
-.additionalInfo > div {
+.additionalInfo > p, .additionalInfo > div {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -45,17 +45,22 @@
 }
 
 .imageOfMe {
-  padding: 10px;
-} 
-
-.imageOfMe > div {
-  background-image: url("../public/me.png");
-  background-color: #464646; /* Used if the image is unavailable */
-  /* height: 100%; You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: auto 100%; /* Resize the background image to cover the entire container */
+  /* padding: 10px; */
+  background-color: #464646;
+  width: fit-content;
   height: 600px;
+  border-radius: 5px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageOfMe img {
+  height: calc(100% - 20px);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width:1932px) {
@@ -94,7 +99,7 @@
     border-top: 3px solid #464646;
   }
 
-  .additionalInfo > div {
+  .additionalInfo > p, .additionalInfo > div {
     top: auto;
     transform: none;
     position: relative;
@@ -108,7 +113,7 @@
     font-size: 25px;
   }
 
-  .additionalInfo > div {
+  .additionalInfo > p, .additionalInfo > div {
     width: calc(100% - 60px);
   }
 }
@@ -132,7 +137,7 @@
     border-top: 3px solid #464646;
   }
 
-  .additionalInfo > div {
+  .additionalInfo > p, .additionalInfo > div {
     top: auto;
     transform: none;
     position: relative;

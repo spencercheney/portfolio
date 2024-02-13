@@ -6,6 +6,11 @@
   z-index: 3;
 }
 
+.component {
+  height: 100%;
+  width: 100%;
+}
+
 .children {
   height: calc(100% - 75px);
   overflow-y: auto;
@@ -13,6 +18,7 @@
   padding-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
+  position: relative;
 }
 
 .hide {

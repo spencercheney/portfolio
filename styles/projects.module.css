@@ -8,9 +8,15 @@
   vertical-align: top;
 }
 
+.data p {
+  margin: 0;
+}
+
 .title {
   font-family: 'STIX Two Text', serif;
   font-size: 23px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .column {
@@ -24,6 +30,23 @@
   font-size: 20px;
   cursor: pointer;
   position: relative;
+  list-style: none;
+  display: flex;
+}
+
+.dropdown::after {
+  display: inline-block;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('../public/circle-arrow-down-solid.svg');
+  background-size: cover;
+  margin-left: .5em;
+  transition: 0.2s;
+}
+
+details[open] > .dropdown::after {
+  transform: rotate(180deg);
 }
 
 .dropdown:hover {

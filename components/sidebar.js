@@ -29,9 +29,9 @@ export default function Sidebar({ goToLink }) {
   }
 
   return (
-    <div className={styles.sidebar}>
+    <section className={styles.sidebar} aria-label="sidebar">
       <BasicComponent>
-        <div className={styles.list} ref={list}>
+        <nav className={styles.list} ref={list}>
           <button className={styles.link} onClick={ () => click("/") }>
             <FontAwesomeIcon icon={faHouse} />
             <span>Home</span>
@@ -44,32 +44,32 @@ export default function Sidebar({ goToLink }) {
             <FontAwesomeIcon icon={faCode} />
             <span>Projects</span>
           </button>
-          <a href="Resume 1_8_2024.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
-            <FontAwesomeIcon icon={faFileArrowDown} />          
+          <a href="resume_02_13_2024.pdf" download="Spencer Cheney's Resume.pdf" className={styles.link}>
+            <FontAwesomeIcon icon={faFileArrowDown} />
             <span>Resume</span>
           </a>
           <button className={styles.link} onClick={ () => click("/contactMe") }>
-            <FontAwesomeIcon icon={faEnvelope} />          
+            <FontAwesomeIcon icon={faEnvelope} />
             <span>Contact Me</span>
           </button>
-        </div>
+        </nav>
 
         <DisplayControl displayControl={displayControl} show={show} setShow={setShow}/>
       </BasicComponent>
-    </div>
+    </section>
   )
 }
 
 function DisplayControl({displayControl, show, setShow}) {
   return (
     <div className={styles.displayControl} ref={displayControl}>
-      {!show && 
+      {!show &&
         <button className={styles.link} onClick={() => setShow(true)}>
           <FontAwesomeIcon icon={faBars} />
           Show Navigation
         </button>
       }
-      
+
       {show &&
         <button className={styles.link} onClick={() => setShow(false)}>
           <FontAwesomeIcon icon={faBars} />

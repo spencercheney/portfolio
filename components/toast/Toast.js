@@ -24,16 +24,14 @@ export default function Toast({ values }) {
   }, [values.initiateOpen])
 
   return (
-    <div className={ [styles.wrapper, location].join(' ') }>
+    <aside className={ [styles.wrapper, location].join(' ') } aria-label="pop up">
       {isClosed ? <></> :
       <div className={ values.initiateClose ? [styles.toast, styles.close].join(' ') : styles.toast }>
-        <div className={ styles.text }>
+        <span className={ styles.text }>
           { values.content }
-        </div>
-        <div>
-          <button onClick={() => dispatch({type: "close"}) } className={ styles.closeBtn }>x</button>
-        </div>
+        </span>
+        <button onClick={() => dispatch({type: "close"}) } className={ styles.closeBtn }>x</button>
       </div>}
-    </div>
+    </aside>
   )
 }

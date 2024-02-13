@@ -9,10 +9,6 @@ import { faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 export default function main() {
   const [showCopy, setShowCopy] = useState(false)
   const [isCopied,  setIsCopied] = useState(false)
-  
-  useEffect(() => {
-    document.title = "Spencer Cheney - Contact Me"
-  }, [])
 
   function copy() {
     //copy to clipboard
@@ -34,12 +30,12 @@ export default function main() {
     }
   }
 
-  return(<>
+  return(<section>
       <table className={styles.table}>
         <tbody>
           <tr className={styles.long}>
             <td>Located In:</td>
-            <td>Idaho Falls, Idaho</td> 
+            <td>Idaho Falls, Idaho</td>
           </tr>
           <tr className={styles.long} onMouseEnter={() => setShowCopy(true)} onMouseLeave={() => setShowCopy(false)}>
             <td>Email:</td>
@@ -69,5 +65,5 @@ export default function main() {
           </tr>
         </tbody>
       </table>
-    </>)
+    </section>)
 }
