@@ -1,9 +1,7 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import styles from  "@/styles/projects.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleArrowUp, faCircleArrowDown } from "@fortawesome/free-solid-svg-icons"
 
 export default function main() {
   return(<>
@@ -31,7 +29,7 @@ export default function main() {
           </tr>
           <tr>
             <td>Styling:</td>
-            <td>Bootstrap and Custom CSS</td>
+            <td>Bootstrap and CSS</td>
           </tr>
           <tr style={{marginBottom: 0}}>
             <td colSpan={2}>Summary:</td>
@@ -73,7 +71,7 @@ export default function main() {
           </tr>
           <tr>
             <td>Styling:</td>
-            <td>Custom CSS</td>
+            <td>CSS</td>
           </tr>
           <tr style={{marginBottom: 0}}>
             <td colSpan={2}>Summary:</td>
@@ -144,7 +142,7 @@ export default function main() {
           </tr>
           <tr>
             <td>Styling:</td>
-            <td>Bootstrap and Custom CSS</td>
+            <td>Bootstrap and CSS</td>
           </tr>
           <tr style={{marginBottom: 0}}>
             <td colSpan={2}>Summary:</td>
@@ -178,7 +176,7 @@ export default function main() {
           </tr>
           <tr>
             <td>Styling:</td>
-            <td>Custom CSS</td>
+            <td>CSS</td>
           </tr>
           <tr style={{marginBottom: 0}}>
             <td colSpan={2}>Summary:</td>
