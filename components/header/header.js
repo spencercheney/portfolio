@@ -1,10 +1,9 @@
 import Image from "next/image"
-import useToast from "../toast/useToast"
 import { useHeaderClass, useIconClass, useModule, useNameClass } from "./headerHooks"
 import lamp from "@/public/lamp.png"
 
-export default function Header({ location, isInitialized }) {
-  const toastDispatch = useToast()
+export default function Header({ location, isInitialized, openToast }) {
+  // const toastDispatch = useToast()
 
   //what will be displayed in the toast
   const toastContent = <p>
@@ -26,7 +25,7 @@ export default function Header({ location, isInitialized }) {
   return (
     location == "none" ? <></> :
     <header className={ headerClass.join(' ') }>
-      <div className={ iconClass.join(' ') } onClick={ () => toastDispatch({ type: "open", content: toastContent }) } aria-labelledby="icon">
+      <div className={ iconClass.join(' ') } onClick={ () => openToast(toastContent) } aria-labelledby="icon">
         <Image src={lamp} alt="a genie lamp" loading="eager" id="icon"/>
       </div>
       <h1 className={ nameClass.join(' ') }>

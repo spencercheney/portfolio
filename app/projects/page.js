@@ -192,6 +192,39 @@ export default function main() {
             </td>
           </tr>
         </Project>
+
+        <br/><br/>
+        <Project title={<>Toasty-React - <a href="https://www.npmjs.com/package/toasty-react" target="new">npmjs.com/package/toasty-react</a></>}>
+          <tr>
+            <td>Language:</td>
+            <td>Typescript</td>
+          </tr>
+          <tr>
+            <td>Framework:</td>
+            <td>React</td>
+          </tr>
+          <tr>
+            <td>Styling:</td>
+            <td>CSS</td>
+          </tr>
+          <tr style={{marginBottom: 0}}>
+            <td colSpan={2}>Summary:</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>
+              <p>
+                When building my portfolio I built a basic toast notification. After completing my portfolio, I realized that this toast could be seperated into a npm package that could be used in any React project. I expanded the feature
+                set and got it published as a public npm package. Typescript was used to ensure type consistency and anticipate/prevent future bugs. Some of the features include...
+                <ul style={{margin: 0}}>
+                  <li>CSS values of the toast can be set so it matches the styling of their project</li>
+                  <li>Developers are able to set the toast to six available locations</li>
+                  <li>Toast can display a string of characters or a React component</li>
+                  <li>The duration of the toast and any of the animation timing can be changed</li>
+                </ul>
+              </p>
+            </td>
+          </tr>
+        </Project>
       </div>
     </>)
 }
